@@ -9,3 +9,6 @@ To start a new Ionic App, follow the steps below:
 
 ## Running Your App
 Start your app in the browser using `ionic serve`. To test your app on an emulated device see [the Ionic documentation](https://ionicframework.com/docs/developing/previewing).
+
+## Developing Further
+The [Ionic documentation](https://ionicframework.com/docs) should have all of the required information to build a fully-funcional cross-platform app.
