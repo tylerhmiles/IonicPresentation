@@ -14,6 +14,7 @@ import { ellipse, settingsOutline, triangle } from 'ionicons/icons';
 import Tab1 from './pages/Tab1';
 import Tab2 from './pages/Tab2';
 import Tab3 from './pages/Settings';
+import { Storage } from "@ionic/storage";
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -34,16 +35,19 @@ import '@ionic/react/css/display.css';
 /* Theme variables */
 import './theme/variables.css';
 
+const storage = new Storage();
+await storage.create();
+
 async function applySettings() {
-  const storage = new Storage();
-  await storage.create();
-  if (storage.getItem("theme") === "dark") {
-    document.body.classList.toggle("dark");
+  if (await storage.get("theme") === "dark") {
+    document.body.classList.add("dark");
   }
 }
 
 setupIonicReact();
-applySettings();
+
+// This should be awaited so that users aren't presented with light theme before the function can complete.
+await applySettings();
 
 const App: React.FC = () => (
   <IonApp>
