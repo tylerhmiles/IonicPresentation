@@ -7,16 +7,19 @@ const Tab1: React.FC = () => {
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>Tab 1</IonTitle>
+          <IonTitle>Home</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
         <IonHeader collapse="condense">
           <IonToolbar>
-            <IonTitle size="large">Tab 1</IonTitle>
+            <IonTitle size="large">Home</IonTitle>
           </IonToolbar>
         </IonHeader>
-        <ExploreContainer name="Tab 1 page" />
+        <IonContent class="ion-padding">
+          <h1>Example App</h1>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum repellat officiis ex natus nulla deserunt cum repudiandae nostrum. Odit harum eos perferendis sit vero minus molestiae minima non perspiciatis officiis.</p>
+        </IonContent>
       </IonContent>
     </IonPage>
   );

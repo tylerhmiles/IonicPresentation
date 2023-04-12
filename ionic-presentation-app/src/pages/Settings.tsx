@@ -46,7 +46,7 @@ const Tab3: React.FC = () => {
         </IonHeader>
         <IonList>
           <IonItem>
-            <IonSelect label="Theme" value={getTheme()} onIonChange={e => updateSetting("theme", e.detail.value)}>
+            <IonSelect label="Theme" value="light" onIonChange={e => updateSetting("theme", e.detail.value)}>
               <IonSelectOption value="light">Light</IonSelectOption>
               <IonSelectOption value="dark">Dark</IonSelectOption>
             </IonSelect>
