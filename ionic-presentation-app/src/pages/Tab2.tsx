@@ -1,9 +1,5 @@
-<<<<<<< HEAD
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButton } from '@ionic/react';
-=======
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonItem, IonInput, IonButton, IonCard, IonCardTitle, IonCardContent } from '@ionic/react';
 import {Storage} from "@ionic/storage";
->>>>>>> 1ec7752e5a91a64d7a0dbe000e62d161539888cc
 import ExploreContainer from '../components/ExploreContainer';
 import './Tab2.css';
 
@@ -29,7 +25,6 @@ const Tab2: React.FC = () => {
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
-
         <IonHeader collapse="condense">
           <IonToolbar> 
             <IonTitle size="large">Tab 2</IonTitle>
