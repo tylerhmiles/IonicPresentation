@@ -1,6 +1,19 @@
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonItem, IonInput, IonButton, IonCard, IonCardTitle, IonCardContent } from '@ionic/react';
+import {Storage} from "@ionic/storage";
 import ExploreContainer from '../components/ExploreContainer';
 import './Tab2.css';
+
+const storage = new Storage({
+  name: "_cards"
+});
+await storage.create();
+
+var text = "";
+
+const onInput = (event: Event) => {
+  text = (event.target as HTMLIonInputElement).value as string;
+  (document.getElementById("card-content") as HTMLIonCardContentElement).innerText = text;
+}
 
 const Tab2: React.FC = () => {
   return (
@@ -16,7 +29,13 @@ const Tab2: React.FC = () => {
             <IonTitle size="large">Tab 2</IonTitle>
           </IonToolbar>
         </IonHeader>
-        <ExploreContainer name="Tab 2 page" />
+        <IonItem>
+          <IonInput id="text-input" clearInput={true} placeholder="Enter text" onIonInput={onInput}></IonInput>
+        </IonItem>
+        <IonCard class="ion-padding">
+          <IonCardTitle>This is a card!</IonCardTitle>
+          <IonCardContent id="card-content">Enter some text to change this card!</IonCardContent>
+        </IonCard>
       </IonContent>
     </IonPage>
   );
