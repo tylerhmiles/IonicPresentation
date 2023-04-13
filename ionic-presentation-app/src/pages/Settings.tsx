@@ -24,11 +24,7 @@ function updateSetting(setting: string, value: string) {
   updateAppPreferences(setting, value);
 }
 
-function getTheme() {
-  storage.get("theme").then((value) => {
-    return value;
-  })
-}
+const theme = await storage.get("theme");
 
 const Tab3: React.FC = () => {
   return (
@@ -46,7 +42,7 @@ const Tab3: React.FC = () => {
         </IonHeader>
         <IonList>
           <IonItem>
-            <IonSelect label="Theme" value="light" onIonChange={e => updateSetting("theme", e.detail.value)}>
+            <IonSelect label="Theme" value={theme} onIonChange={e => updateSetting("theme", e.detail.value)}>
               <IonSelectOption value="light">Light</IonSelectOption>
               <IonSelectOption value="dark">Dark</IonSelectOption>
             </IonSelect>
